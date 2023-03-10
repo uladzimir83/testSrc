@@ -1,0 +1,129 @@
+@import './variables';
+
+.footer {
+    padding: 2.4615em 0 2.1538em;
+    font-size: .8125em;
+    white-space: nowrap;
+    color: $light;
+    background-color: $dark-grey;
+
+    @media screen and (max-width: $Small-s) {
+        padding: 2.3em 0 1.3em;
+    }
+
+    &__inner,
+    &__row,
+    &__col {
+        display: flex;
+        align-items: center;
+    }
+
+    &__inner {
+        @media screen and (max-width: $Large-s) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__copyright {
+        padding: 0 3.1154em 0 1.2307em;
+
+        @media screen and (max-width: $Large-s) {
+            width: 100%;
+            margin-bottom: 1.2em;
+            padding: 0;
+        }
+
+        @media screen and (max-width: $Medium-s) {
+            margin-bottom: 1.5em;
+        }
+
+        @media screen and (max-width: $Small-s) {
+            line-height: 1.6em;
+            white-space: initial;
+        }
+    }
+
+    &__row {
+        padding: 0 3.1154em;
+        border-left: 1px solid $grey-light;
+
+        @media screen and (max-width: $Large) {
+            &:nth-child(2) {
+                padding-left: 0;
+                border: none;
+            }
+        }
+
+        @media screen and (max-width: $Medium) {
+            padding: 0 2em;
+        }
+
+        @media screen and (max-width: $Medium-s) {
+            justify-content: center;
+            width: 100%;
+            border: none;
+            padding: 0 1.5em;
+
+            &:nth-child(2) {
+                margin-bottom: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: $Small-s) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+
+            &:nth-child(2) {
+                margin-bottom: 1.2em;
+            }
+        }
+    }
+
+    &__col {
+        margin-right: 2.9231em;
+        white-space: nowrap;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        @media screen and (max-width: $Large) {
+            margin-right: 1.7em;
+        }
+
+        @media screen and (max-width: $Large) {
+            margin-right: 2em;
+        }
+
+        @media screen and (max-width: $Medium) {
+            margin-right: 1.5em;
+        }
+
+        @media screen and (max-width: $Small-s) {
+            margin-right: 0;
+            margin-bottom: 1.2em;
+        }
+    }
+
+    &__icon {
+        width: 1.5385em;
+        height: 1.5385em;
+        margin-right: .8462em;
+    }
+}
+
+.footer__payment__text {
+    color: $grey-light;
+}
+
+.footer__contact__link {
+    color: $light;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all .3s;
+
+    &:hover {
+        text-decoration-color: $light;
+    }
+}

@@ -1,0 +1,78 @@
+
+@import './variables';
+
+/* hamburger icon for toggle device menu */
+.hamburger {
+    position: relative;
+    z-index: 1;
+    display: none;
+    width: 32px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $light;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: '';
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -11px;
+    width: 27px;
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger-inner::after {
+    bottom: -11px;
+    width: 22px;
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+  
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    width: 32px;
+    background-color: $dark;
+}
+  
+.hamburger.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+}
+
+.hamburger.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media screen and (max-width: $Medium) {
+    .hamburger {
+        display: inline-block;
+    }
+}
